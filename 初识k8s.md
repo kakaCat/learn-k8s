@@ -28,7 +28,9 @@ centos7 64位系统
 
 ## 2.3安装部署
 
-### 2.3.1 yum 切换成阿里源
+### 2.3.1 准备工作
+
+#### 2.3.1.1 yum 换阿里源
 
 - 备份原有的源
 
@@ -43,6 +45,25 @@ centos7 64位系统
   yum clean all
 
   yum makecache
+
+#### 2.3.1.2 docker 1.13.1 换阿里源
+
+- /etc/docker/daemon.json
+
+  ```
+  {
+  "registry-mirrors": [
+  "https://kfwkfulq.mirror.aliyuncs.com",
+  "https://2lqq34jg.mirror.aliyuncs.com",
+  "https://pee6w651.mirror.aliyuncs.com",
+  "https://registry.docker-cn.com",
+  "http://hub-mirror.c.163.com"
+  ],
+  "dns": ["8.8.8.8","8.8.4.4"]
+  }
+  ```
+
+#### 2.3.1.3 下载ca授权
 
 - 下载ca授权
 
